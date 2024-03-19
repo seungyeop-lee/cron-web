@@ -1,0 +1,7 @@
+schedulers:
+  - name: example1
+    command: ./hello.sh Hello!
+    cron: "*/1 * * * * *"
+  - name: example2
+    command: ./hello.sh World!
+    cron: "*/1 * * * * *"
