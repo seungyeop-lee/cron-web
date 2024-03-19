@@ -54,7 +54,10 @@ func main() {
 			gocron.CronJob(s.Cron, true),
 			gocron.NewTask(
 				func() {
-					easycmd.New().Run(easycmd.Command(s.Command))
+					err2 := easycmd.New().Run(easycmd.Command(s.Command))
+					if err2 != nil {
+						fmt.Println(err2)
+					}
 				},
 			),
 		)
